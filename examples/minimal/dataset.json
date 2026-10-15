@@ -1,0 +1,160 @@
+{
+  "schema_version": "1.0",
+  "metadata": {
+    "dataset_id": "synthetic-minimal-v1",
+    "project_id": "demo",
+    "data_kind": "synthetic",
+    "captured_at": "2026-01-01T00:02:00Z"
+  },
+  "stages": [
+    "build",
+    "check",
+    "capture"
+  ],
+  "tasks": [
+    {
+      "task_id": "demo-task",
+      "enrolled_at": "2026-01-01T00:00:00Z",
+      "initial_version_id": "version-1",
+      "condition": "synthetic-example"
+    }
+  ],
+  "states": [
+    {
+      "state_id": "state-1",
+      "task_id": "demo-task",
+      "version_id": "version-1",
+      "attempt": 1,
+      "revision": 0,
+      "is_current": false,
+      "origin": "visual_revision"
+    },
+    {
+      "state_id": "state-2",
+      "task_id": "demo-task",
+      "version_id": "version-2",
+      "attempt": 2,
+      "revision": 0,
+      "is_current": true,
+      "origin": "current"
+    }
+  ],
+  "executions": [
+    {
+      "execution_id": "run-1",
+      "status": "DONE",
+      "task_id": "demo-task",
+      "version_id": "version-1",
+      "stage": "build",
+      "resource_id": "native-slot",
+      "execution_kind": "native",
+      "accepted_at": 1767225610,
+      "started_at": 1767225620,
+      "finished_at": 1767225650
+    },
+    {
+      "execution_id": "run-2",
+      "status": "CANCELED",
+      "accepted_at": 1767225660,
+      "started_at": null,
+      "finished_at": null,
+      "resource_id": "native-slot"
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "file-1",
+      "path": "build.txt",
+      "expected_sha256": "bf72342049c0f1860c3a6fd664a91fc00544bc72117753ad4b418a1ce1215171",
+      "version_id": "version-1",
+      "observation": {
+        "status": "match",
+        "basis": "synthetic",
+        "actual_sha256": "bf72342049c0f1860c3a6fd664a91fc00544bc72117753ad4b418a1ce1215171",
+        "observed_at": "2026-01-01T00:00:00Z"
+      }
+    },
+    {
+      "evidence_id": "file-2",
+      "path": "absent.txt",
+      "expected_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "observation": {
+        "status": "missing",
+        "basis": "synthetic",
+        "actual_sha256": null,
+        "observed_at": "2026-01-01T00:00:00Z"
+      }
+    },
+    {
+      "evidence_id": "file-3",
+      "path": "changed.txt",
+      "expected_sha256": "05ea2a5673dbc27b3ca3f4918d050c8a37b70a9fda201e516112b29325368910",
+      "observation": {
+        "status": "mismatch",
+        "basis": "synthetic",
+        "actual_sha256": "32cdf1cc8957798aa65d44b8fff9281d67fd4a8726626589c9566d0aa8c32c1a",
+        "observed_at": "2026-01-01T00:00:00Z"
+      }
+    }
+  ],
+  "attestations": [
+    {
+      "attestation_id": "a-1",
+      "state_id": "state-1",
+      "stage": "build",
+      "execution_id": "run-1",
+      "evidence_id": "file-1"
+    },
+    {
+      "attestation_id": "a-2",
+      "state_id": "state-1",
+      "stage": "check",
+      "execution_id": "unretained-run",
+      "evidence_id": "file-2"
+    },
+    {
+      "attestation_id": "a-3",
+      "state_id": "state-2",
+      "stage": "build",
+      "execution_id": "run-1",
+      "evidence_id": "file-1"
+    },
+    {
+      "attestation_id": "a-4",
+      "state_id": "state-2",
+      "stage": "capture",
+      "execution_id": "run-2",
+      "evidence_id": "file-3"
+    }
+  ],
+  "decisions": [
+    {
+      "decision_id": "d-1",
+      "task_id": "demo-task",
+      "version_id": "version-1",
+      "decision": "accepted",
+      "scope": "synthetic visual rubric",
+      "reviewer_kind": "agent",
+      "independent_reviewer": false,
+      "decided_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "decision_id": "d-2",
+      "task_id": "demo-task",
+      "version_id": null,
+      "decision": "recorded_fixed",
+      "scope": null,
+      "reviewer_kind": "unknown"
+    }
+  ],
+  "transitions": [
+    {
+      "transition_id": "t-1",
+      "task_id": "demo-task",
+      "from_state_id": "state-1",
+      "to_state_id": "state-2",
+      "category": "visual_revision",
+      "occurred_at": null
+    }
+  ]
+}
