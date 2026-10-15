@@ -1,0 +1,6 @@
+{
+  "task_id": "demo-task",
+  "enrolled_at": "2026-01-01T00:00:00Z",
+  "initial_version_id": "version-1",
+  "condition": "synthetic-example"
+}
