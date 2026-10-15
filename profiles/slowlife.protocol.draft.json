@@ -1,0 +1,37 @@
+{
+  "protocol_id": "slowlife-study-v1",
+  "project_id": "Slowlife",
+  "status": "draft",
+  "design": "prospective_observational",
+  "primary_unit": "enrolled task; attempts and executions are nested",
+  "stages": [],
+  "engine": null,
+  "task_population": null,
+  "enrollment_rule": null,
+  "stopping_rule": null,
+  "primary_outcomes": [
+    "joint file-verification and execution-linkage coverage",
+    "exact version and scope binding of recorded decisions"
+  ],
+  "secondary_outcomes": [
+    "deduplicated native lease occupancy",
+    "model-cost and human-time measurement coverage",
+    "revision causes and incomplete tasks"
+  ],
+  "missing_data_policy": "Keep missing files, unmatched IDs, unobserved attempts and unknown costs distinct; do not impute zero.",
+  "conditions": null,
+  "allocation_rule": null,
+  "budget_rule": null,
+  "independent_outcome_assessment": null,
+  "environment_to_record": [
+    "model and version",
+    "client version",
+    "engine version",
+    "workflow version",
+    "starting asset manifest",
+    "hardware",
+    "queue policy"
+  ],
+  "amendment_policy": "New protocol version and journal/dataset ID, with reason and actual timestamp; preserve prior snapshots.",
+  "notes": "Planning only. Not frozen, not externally preregistered, and contains no experimental results."
+}
