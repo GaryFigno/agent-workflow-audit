@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Please cite the software version used. The manuscript is a separate, not peer-reviewed work."
+type: software
+title: Agent Workflow Audit
+version: 0.1.0
+authors:
+  - family-names: Wang
+    given-names: Jiayi
+    affiliation: "Independent Researcher, China"
+license: MIT
+repository-code: "https://github.com/GaryFigno/agent-workflow-audit"
+url: "https://github.com/GaryFigno/agent-workflow-audit"
+abstract: "Offline audits of evidence files, execution records, revision histories, resource accounting, and version-bound decisions."
+keywords:
+  - agent workflows
+  - provenance
+  - empirical software engineering

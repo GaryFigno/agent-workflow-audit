@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-workflow-audit"
+version = "0.1.0"
+description = "Offline evidence, execution, revision, and acceptance audits for agent workflows"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "Wang Jiayi"}]
+dependencies = []
+keywords = ["agents", "provenance", "audit", "empirical-software-engineering"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+]
+
+[project.urls]
+Repository = "https://github.com/GaryFigno/agent-workflow-audit"
+Issues = "https://github.com/GaryFigno/agent-workflow-audit/issues"
+
+[project.scripts]
+awa = "agent_workflow_audit.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
