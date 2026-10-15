@@ -1,0 +1,9 @@
+{
+  "state_id": "state-1",
+  "task_id": "demo-task",
+  "version_id": "version-1",
+  "attempt": 1,
+  "revision": 0,
+  "is_current": true,
+  "origin": "current"
+}

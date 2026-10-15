@@ -1,0 +1,12 @@
+{
+  "execution_id": "run-1",
+  "status": "DONE",
+  "task_id": "demo-task",
+  "version_id": "version-1",
+  "stage": "build",
+  "resource_id": "native-slot",
+  "execution_kind": "native",
+  "accepted_at": 1767225610,
+  "started_at": 1767225620,
+  "finished_at": 1767225650
+}
